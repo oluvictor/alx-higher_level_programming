@@ -1,5 +1,8 @@
 #!/usr/bin/python3
+# Author - Victor Ogunshola
+
 def uppercase(str):
+    """Print a string in uppercase."""
     new_str = ''
     for c in str:
         c_ascii = ord(c)
