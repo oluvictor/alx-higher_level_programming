@@ -10,4 +10,5 @@ def uppercase(str):
             new_str = new_str + chr(c_ascii - 32)
         else:
             new_str = new_str + chr(c_ascii)
-    print(new_str)
+    print(new_str, end='')
+    print("")
