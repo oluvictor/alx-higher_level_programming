@@ -11,6 +11,7 @@ def main():
             sum += int(sys.argv[i])
     print(sum)
 
+
 if __name__ == "__main__":
     """This part will only run in the terminal"""
     main()
