@@ -7,14 +7,17 @@ def main():
     argc = len(sys.argv) - 1
     if argc != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit 1
+        sys.exit(1)
+
     operator = sys.argv[2]
-    a = sys.argv[1]
-    b = sys.argv[3]
-    print("{} + {} = {}".format(a, b, add(a, b)))
-    print("{} - {} = {}".format(a, b, sub(a, b)))
-    print("{} * {} = {}".format(a, b, mul(a, b)))
-    print("{} / {} = {}".format(a, b, div(a, b)))
+    ops = {"+": add, "-": sub, "*": mul, "/": div}
+    if operator not in list(ops.keys()):
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
+
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
+    print("{} {} {} = {}".format(a, operator, b, ops[operator](a, b)))
 
 
 if __name__ == "__main__":
